@@ -1,4 +1,4 @@
-var basePath = $("base").attr("href");
+﻿var basePath = $("base").attr("href");
 /**
  * 获取地理位置信息 Object { ret: 1, start: -1, end: -1, country: "中国", province: "浙江",
  * city: "宁波", district: "", isp: "", type: "", desc: "" } function.js:12:5
@@ -404,11 +404,15 @@ function setCookie(name, value, time) {
 	document.cookie = name + "=" + escape(value) + ";expires="
 			+ exp.toGMTString();
 }
+/**
+*@param str 计算毫秒数, str 第一位为时间类型 s 秒 m 分  h 小时 d 天 第二位开始为数值 如  s5 即 5000毫秒
+*/
 function getsec(str) {
 	var str1 = str.substring(1, str.length) * 1;
 	var str2 = str.substring(0, 1);
 	if (str2 == "s") {
 		return str1 * 1000;
+		return str1 * 60 * 1000;
 	} else if (str2 == "h") {
 		return str1 * 60 * 60 * 1000;
 	} else if (str2 == "d") {
