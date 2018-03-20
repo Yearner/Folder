@@ -412,6 +412,7 @@ function getsec(str) {
 	var str2 = str.substring(0, 1);
 	if (str2 == "s") {
 		return str1 * 1000;
+	} else if (str2 == "m") {
 		return str1 * 60 * 1000;
 	} else if (str2 == "h") {
 		return str1 * 60 * 60 * 1000;
